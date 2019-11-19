@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'com.adarshr.test-logger' version '2.0.0'
+}
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'pl.pragmatists:JUnitParams:1.1.1'
+    testCompile 'org.assertj:assertj-core:3.11.1'
+    compile 'com.codeborne:selenide:5.5.0'
+    implementation 'com.applitools:eyes-selenium-java3:3.158.5'
+}
+
+testlogger {
+    slowThreshold 30000
+}
+
+tasks.withType(Test).configureEach {
+    outputs.upToDateWhen { false }
+}
