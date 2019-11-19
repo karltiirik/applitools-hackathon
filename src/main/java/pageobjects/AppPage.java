@@ -1,8 +1,6 @@
 package pageobjects;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.SelenideWait;
-import org.openqa.selenium.By;
 
 import java.util.LinkedHashMap;
 import java.util.List;
